@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+main {
+    margin: 0 20%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(184, 17,17, 0.1);
+}
+
+h2{
+    text-align: center;
+    margin: 10px;
+    border-bottom: 2px solid rgb(3, 16, 39);
+    padding: 10px;
+}
+
+/* Inserir antes de algum elemento */
+h1::before {
+    content: '🌟';
+}
+
+/* Inserir depois de algum elemento */
+h1::after{
+    content: '🌟';
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+b{
+    color: gray;
+}
+
+section {
+    margin: 3%; 
+}
+
+#formacao > ul > li {
+    margin-left: 5%
+}
+
+#experiencia > ul > li {
+    margin-left: 5%
+}
+
+h3{
+    margin: 20px  0;
+}
+
+header{
+    background-color: rgb(3, 16, 39);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 30px;
+    max-width: 95%;
+    margin: 20px;
+}
+
+header:hover {
+    background-color: #9500b3;
+    transform: scale(1.01);  
+}
+
+header > section {
+    margin: 20px;
+}
+
+header > section > p {
+    font-size: 18px;
+    margin: 20px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: rgb(216, 207, 207);
+}
+
+
+.container_botao{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    
+}
+button {
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 120px;
+    height: 60px;
+    margin-left: 30px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+input{
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+#saudacao::before{
+    content: '👏';
+}
+
+#saudacao::after{
+    content: '👏';
+}
+
