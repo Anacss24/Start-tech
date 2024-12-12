@@ -1,0 +1,84 @@
+
+Static staticVar := 0
+
+Function U_escopos()
+    exLocal()
+    exPublicPrivate()
+    exStatic()
+
+
+    If Type( "publicVar" ) == "C"
+        msgInfo( "Fora de exemploPublicPrivate - Public: " + publicVar)
+    Else
+        msgInfo( "Variável pública não existe" )
+    EndIf
+
+    If Type( "privateVar" ) == "C"
+        msgInfo( "Dentro de exemploPublicPrivate - Private: " + privateVar )
+    Else
+        msgInfo( "Variável Private não existe" )
+    EndIf
+
+Return
+
+
+Static Function exLocal()
+    Local localVar := "valorLocal"
+
+
+    msgInfo( "Valor da variável Local: " + localVar )
+
+
+    alteraLocal(localVar)
+    msgInfo( "Após passar por valor: " + localVar )
+
+
+    alteraReferencia( @localVar )
+    msgInfo( "Após passar por referência: " + localVar )
+
+Return
+
+
+Static Function alteraLocal( localVar )
+    localVar := "alteradoPorValor"
+    msgInfo( "Dentro de alteraLocal: " + localVar )
+Return
+
+
+Static Function alteraReferencia( localVar )
+    localVar := "alteradoPorReferencia"
+    msgInfo( "Dentro de alteraReferencia: " + localVar )
+Return
+
+
+Static Function exPublicPrivate()
+    Public publicVar := "Sou Pública"
+    Private privateVar := "Sou Privada"
+
+    msgInfo( "Dentro de exemploPublicPrivate - Public: " + publicVar )
+    msgInfo( "Dentro de exemploPublicPrivate - Private: " + privateVar )
+
+    exPrivate()
+Return
+
+
+Static Function exPrivate()
+
+    If Type( "privateVar" ) == "C"
+        msgInfo( "Dentro de exemploPublicPrivate - Private: " + privateVar )
+    Else
+        msgInfo( "Variável Private não existe" )
+    EndIf
+
+Return
+
+
+Static Function exStatic()
+    Static exemploStatic := 0
+
+    exemploStatic += 1
+    staticVar += 1
+
+    msgInfo( "Static declarada dentro do fonte: " + Str(exemploStatic) )
+    msgInfo( "Static Global: " + Str(staticVar) )
+Return

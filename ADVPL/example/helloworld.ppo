@@ -1,0 +1,32 @@
+#line 1 "c:/totvs/include\protheus.ch"
+#line 1 "c:/totvs/include\dialog.ch"
+#line 29 "protheus.ch"
+#line 1 "c:/totvs/include\font.ch"
+#line 30 "protheus.ch"
+#line 1 "c:/totvs/include\ptmenu.ch"
+#line 32 "protheus.ch"
+#line 1 "c:/totvs/include\print.ch"
+#line 34 "protheus.ch"
+#line 1 "c:/totvs/include\colors.ch"
+#line 36 "protheus.ch"
+#line 1 "c:/totvs/include\folder.ch"
+#line 38 "protheus.ch"
+#line 1 "c:/totvs/include\msobject.ch"
+#line 39 "protheus.ch"
+#line 1 "c:/totvs/include\vkey.ch"
+#line 43 "protheus.ch"
+#line 1 "c:/totvs/include\winapi.ch"
+#line 45 "protheus.ch"
+#line 1 "c:/totvs/include\fwcommand.ch"
+#line 48 "protheus.ch"
+#line 1 "c:/totvs/include\fwcss.ch"
+#line 51 "protheus.ch"
+#line 15 "C:\Users\CTT\AppData\Local\Temp\tds-ls.kfjfuoxntd\c:/users/ctt/desktop/ana claudia/vscode/example/helloworld.prw"
+ Function U_helloWorld()
+    Iif(FindFunction("APMsgAlert"), APMsgAlert("Olá totvers",), MsgAlert("Olá totvers",))
+
+    AxCadastro("SB1")
+
+    Iif(FindFunction("APMsgAlert"), APMsgAlert("Final",), MsgAlert("Final",))
+
+Return

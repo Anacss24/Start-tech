@@ -1,0 +1,31 @@
+
+Function U_frutas()
+
+local fruta As  Character
+local frutas := {}
+local contador := 1
+local frutapesquisar As  Character
+
+   for x := 1 to 5
+    fruta := FwInputBox("Digite uma fruta: ")
+    AAdd(frutas, fruta)
+    msgInfo(frutas[x])
+    Next
+
+   frutapesquisar := FwInputBox("Digite uma fruta a ser pesquisada: ")
+   frutaPes := AScan(frutas, frutapesquisar)
+
+   if (frutaPes > 0)
+     MsgInfo("Fruta Encontrada na posição " + cValToChar(frutaPes))
+    Else
+    MsgInfo("Fruta não encontrada")
+    EndIf
+
+   ASort(frutas)
+
+   frutapesquisar := FwInputBox("Digite novamente uma fruta a ser pesquisada: ")
+    frutaPes := AScan(frutas, frutapesquisar)
+   msgInfo("Fruta Encontrada na posição " + cValToChar(frutaPes))
+
+
+Return

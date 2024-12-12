@@ -1,0 +1,55 @@
+
+
+
+
+static ultimoID := ""
+
+Function U_controleAcessos()
+    entrada()
+Return
+
+Static Function entrada()
+    Local entrada
+
+    Public totalAcessos := 0
+
+    While .T. 
+        entrada := FwInputBox( "Digite o seu ID ou Q para sair:" )
+        If entrada == "Q"
+            Exit
+        EndIf
+
+        registraAcesso( entrada )
+    EndDo
+
+    msgInfo( "Contador total de acessos: " + Str( totalAcessos ) )
+
+
+    consultaUltimoID()
+    totalAcessos()
+return
+
+
+Static Function registraAcesso( cID )
+    Local localID := cID
+
+
+    totalAcessos++
+
+
+    ultimoID := localID
+
+    msgInfo( "Acesso registrado para o ID: " + localID )
+
+Return
+
+
+Static Function consultaUltimoID()
+
+        msgInfo( "Último ID registrado foi: " + ultimoID )
+Return
+
+
+Static Function totalAcessos()
+    msgInfo( "Total de acessos globais: " + Str( totalAcessos ) )
+Return

@@ -1,0 +1,111 @@
+#line 1 "c:/totvs/include\protheus.ch"
+#line 1 "c:/totvs/include\dialog.ch"
+#line 29 "protheus.ch"
+#line 1 "c:/totvs/include\font.ch"
+#line 30 "protheus.ch"
+#line 1 "c:/totvs/include\ptmenu.ch"
+#line 32 "protheus.ch"
+#line 1 "c:/totvs/include\print.ch"
+#line 34 "protheus.ch"
+#line 1 "c:/totvs/include\colors.ch"
+#line 36 "protheus.ch"
+#line 1 "c:/totvs/include\folder.ch"
+#line 38 "protheus.ch"
+#line 1 "c:/totvs/include\msobject.ch"
+#line 39 "protheus.ch"
+#line 1 "c:/totvs/include\vkey.ch"
+#line 43 "protheus.ch"
+#line 1 "c:/totvs/include\winapi.ch"
+#line 45 "protheus.ch"
+#line 1 "c:/totvs/include\fwcommand.ch"
+#line 48 "protheus.ch"
+#line 1 "c:/totvs/include\fwcss.ch"
+#line 51 "protheus.ch"
+#line 3 "C:\Users\CTT\AppData\Local\Temp\tds-ls.eiadsxswui\c:/users/ctt/desktop/ana claudia/vscode/advpl/8array.prw"
+
+Function U_array()
+    Local aVariavel1
+    Local aVariavel2 As  Array
+    Local aVariavel3 := {} As  Array
+    Local nX
+    Local nIndex
+
+    aVariavel3 := { 1, 2, 3, 4, 5 }
+    aVariavel3[ 1 ] := 10
+
+
+    aVariavel2 := Array( 10)
+
+    aVariavel2 := Array( 10, "a" )
+
+    aVariavel2 := Array( 10, 2, "a" )
+
+    Iif(FindFunction("APMsgInfo"), APMsgInfo("Tamanho do array: "+Str(Len(aVariavel2)), "aVariavel2"), MsgInfo("Tamanho do array: "+Str(Len(aVariavel2)), "aVariavel2"))
+    Iif(FindFunction("APMsgInfo"), APMsgInfo("Tamanho do array: "+Str(Len(aVariavel2[1])), "aVariavel2"), MsgInfo("Tamanho do array: "+Str(Len(aVariavel2[1])), "aVariavel2"))
+
+
+    AAdd( aVariavel3 , 6 )
+
+    aVariavel1 := aVariavel3
+    aVariavel1[ 1 ] := "mudei"
+
+    Iif(FindFunction("APMsgInfo"), APMsgInfo(aVariavel1[1], "aVariavel1"), MsgInfo(aVariavel1[1], "aVariavel1"))
+    Iif(FindFunction("APMsgInfo"), APMsgInfo(aVariavel3[1], "aVariavel3"), MsgInfo(aVariavel3[1], "aVariavel3"))
+
+    aVariavel1 := AClone( aVariavel3 )
+    aVariavel1[ 1 ] := "mudeideNovo"
+
+    Iif(FindFunction("APMsgInfo"), APMsgInfo(aVariavel1[1], "aVariavel1"), MsgInfo(aVariavel1[1], "aVariavel1"))
+    Iif(FindFunction("APMsgInfo"), APMsgInfo(aVariavel3[1], "aVariavel3"), MsgInfo(aVariavel3[1], "aVariavel3"))
+
+    ADel( aVariavel3, 3 )
+
+    Iif(FindFunction("APMsgInfo"), APMsgInfo(Len(aVariavel3), "aVariavel3"), MsgInfo(Len(aVariavel3), "aVariavel3"))
+
+    For nX:= 1 to Len( aVariavel3 )
+        Iif(FindFunction("APMsgInfo"), APMsgInfo(aVariavel3[nX], "aVariavel3"), MsgInfo(aVariavel3[nX], "aVariavel3"))
+    Next
+
+    ASize(aVariavel3, Len(aVariavel3) - 1 )
+
+    Iif(FindFunction("APMsgInfo"), APMsgInfo(Len(aVariavel3), "aVariavel3"), MsgInfo(Len(aVariavel3), "aVariavel3"))
+
+    For nX:= 1 to Len( aVariavel3 )
+        Iif(FindFunction("APMsgInfo"), APMsgInfo(aVariavel3[nX], "aVariavel3"), MsgInfo(aVariavel3[nX], "aVariavel3"))
+    Next
+
+    AFill(aVariavel3, "valor" )
+
+    For nX:= 1 to Len( aVariavel3 )
+        Iif(FindFunction("APMsgInfo"), APMsgInfo(aVariavel3[nX], "aVariavel3"), MsgInfo(aVariavel3[nX], "aVariavel3"))
+    Next
+
+    aVariavel3 := { 1, 2, 3, 4, 5 }
+
+    nIndex := AScan( aVariavel3, { |item| item == 3 } )
+    nIndex := AScan( aVariavel3, 3 )
+
+    aVariavel3 := {}
+    AAdd(aVariavel3, "Banana")
+    AAdd(aVariavel3, "Maçã")
+    AAdd(aVariavel3, "Pêra")
+    AAdd(aVariavel3, "Limão")
+    AAdd(aVariavel3, "Abacaxi")
+    AAdd(aVariavel3, "Laranja")
+    AAdd(aVariavel3, "Mamão")
+    AAdd(aVariavel3, "Graviola")
+
+    ASort(aVariavel3)
+
+    For nX:= 1 to Len( aVariavel3 )
+        Iif(FindFunction("APMsgInfo"), APMsgInfo(aVariavel3[nX], "aVariavel3"), MsgInfo(aVariavel3[nX], "aVariavel3"))
+    Next
+
+    ASort(aVariavel3, , , { |item1, item2| item1 > item2 } )
+
+    For nX:= 1 to Len( aVariavel3 )
+        Iif(FindFunction("APMsgInfo"), APMsgInfo(aVariavel3[nX], "aVariavel3"), MsgInfo(aVariavel3[nX], "aVariavel3"))
+    Next
+
+    Iif(FindFunction("APMsgInfo"), APMsgInfo(ATail(aVariavel3), "aVariavel3"), MsgInfo(ATail(aVariavel3), "aVariavel3"))
+return

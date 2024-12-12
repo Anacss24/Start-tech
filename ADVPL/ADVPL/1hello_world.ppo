@@ -1,0 +1,7 @@
+
+
+Function U_hello()
+
+    MsgInfo("Hello, World!" ,"Ana Claudia")
+
+Return

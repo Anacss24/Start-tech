@@ -1,0 +1,52 @@
+Function U_estruturas()
+ Local valor
+
+ valor := FwInputBox("Insira seu gênero")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Do Case
+        Case valor == "M"
+            MsgInfo("Masculino", "Resultado")
+        Case valor == "F"
+            MsgInfo("Feminino", "Resultado")
+        Otherwise
+             MsgInfo("Dado inválido", "Resultado")
+    EndCase
+
+Return
+
+Function U_repeticao()
+    Local x := 0
+
+    For x := 1 to 20
+
+      If x % 2 == 0
+            MsgAlert(x, "Resultado")
+        EndIf
+    Next
+Return
+
+Function U_whil()
+     Local x := 0
+     Local condicao := .T. 
+     while condicao
+        MsgInfo("Mensagem Número " +cValToChar(x), "Resultado")
+        if x == 10
+            Exit
+        EndIf
+        x++
+    End
+Return

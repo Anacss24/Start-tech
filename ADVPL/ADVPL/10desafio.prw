@@ -1,0 +1,25 @@
+User Function desafio()
+Local nome As Character
+Local movel As Character
+Local valor As Numeric
+Local parcelas  As Numeric
+Local valor_parcela  As Numeric
+Local i As Numeric
+
+nome := FwInputBox("Olá! Qual o seu nome?")
+MsgInfo("Seja bem vindo " + nome, "Saudação")
+movel := FwInputBox("Qual móvel irá comprar?")
+valor := FwInputBox("Qual é o valor do móvel? ")
+parcelas := Val(FwInputBox("Número de parcelas? "))
+valor_parcela := valor / parcelas
+
+datas_parcelas := "As datas das parcelas são: "
+
+For i := 1 To parcelas
+    datas_parcelas := datas_parcelas + " " + DToc(Date() + i*30)
+Next
+
+MsgInfo("O total da sua compra de " + movel + " é de R$ " + cValToChar(valor) + ".", "Simulação")
+MsgInfo("A compra foi divida em " + cValToChar(parcelas) + " de R$ " + cValToChar(valor_parcela) + ".", "Simulação")
+MsgInfo(datas_parcelas, "Simulação")
+Return

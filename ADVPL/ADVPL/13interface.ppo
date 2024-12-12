@@ -1,0 +1,151 @@
+#line 1 "c:/totvs/include\protheus.ch"
+#line 1 "c:/totvs/include\dialog.ch"
+#line 29 "protheus.ch"
+#line 1 "c:/totvs/include\font.ch"
+#line 30 "protheus.ch"
+#line 1 "c:/totvs/include\ptmenu.ch"
+#line 32 "protheus.ch"
+#line 1 "c:/totvs/include\print.ch"
+#line 34 "protheus.ch"
+#line 1 "c:/totvs/include\colors.ch"
+#line 36 "protheus.ch"
+#line 1 "c:/totvs/include\folder.ch"
+#line 38 "protheus.ch"
+#line 1 "c:/totvs/include\msobject.ch"
+#line 39 "protheus.ch"
+#line 1 "c:/totvs/include\vkey.ch"
+#line 43 "protheus.ch"
+#line 1 "c:/totvs/include\winapi.ch"
+#line 45 "protheus.ch"
+#line 1 "c:/totvs/include\fwcommand.ch"
+#line 48 "protheus.ch"
+#line 1 "c:/totvs/include\fwcss.ch"
+#line 51 "protheus.ch"
+#line 3 "C:\Users\CTT\AppData\Local\Temp\tds-ls.sannfmrrvh\c:/users/ctt/desktop/ana claudia/vscode/advpl/13interface.prw"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Function U_interface()
+
+
+    componentes()
+return
+
+Static Function janelas()
+
+    msdialog1()
+    msdialog2()
+
+Return
+
+Static Function msdialog1()
+    Local oDlg
+
+
+
+    oDlg := MSDialog():New(180,180,550,700,"Exemplo MSDialog",,,,,,,,, .T. )
+
+
+    oDlg:Activate(,,, .T. ,{||MsgStop("validou!"), .T. },,{||MsgStop("iniciando")} )
+
+
+Return
+
+
+Static Function msdialog2()
+    Local oDlg
+
+
+    oDlg = MsDialog():New( 180, 180, 550, 700, "Exemplo MSDialog com define",,,.F.,,,,,,.T.,, ,.F. )
+
+
+    oDlg:Activate( oDlg:bLClicked, oDlg:bMoved, oDlg:bPainted,.T.,{|Self|(MsgStop("Validou define!"), .T. )},,{|Self|(MsgStop("iniciando define"))}, oDlg:bRClicked, )
+
+
+Return
+
+Static Function componentes()
+    Local oDlg
+    Local oGet1
+    Local oGet2
+    Local oSay
+    Local oComboBox
+    Local oPanel
+    Local oGroup
+    Local oFolder
+    Local cNome := Space(50)
+     Local cNome2 := Space(50)
+    Local aItems:= {"Item1","Item2","Item3"}
+    Local cCombo := aItems[1]
+
+
+
+    oDlg := MSDialog():New( 180, 180, 550, 700, "Exemplo MSDialog",,,,,,,,, .T. )
+
+
+
+
+
+    oSay:= TSay():New( 20, 20, {|| "Nome" },oDlg,,,,,, .T. ,,,200,20)
+
+
+    oGet1 := TGet():New( 40, 20, { | u | If( PCount() == 0, cNome, cNome := u ) }, oDlg, 100, 010, "@!", {|| .T.  } ,,,,,, .T. )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    TButton():New( 002, 002, "Botão 01",oDlg,{||alert("Botão 01")}, 40,10,,, .F. , .T. , .F. ,, .F. ,,, .F.  )
+    oDlg:Activate()
+Return
+
+Static Function myValid( cNome )
+    If empty( cNome )
+        Iif(FindFunction("APMsgInfo"), APMsgInfo("Nome não pode ser vazio", "Atenção"), MsgInfo("Nome não pode ser vazio", "Atenção"))
+        Return .F. 
+    EndIf
+
+Return .T. 

@@ -1,0 +1,23 @@
+Function U_Character()
+Local valor
+
+
+valor := FwInputBox("Insira uma frase")
+ MsgInfo(Upper(valor), "Resultado")
+ MsgInfo(Lower(valor), "Resultado")
+
+
+Return
+
+
+Function U_SubStrAt()
+Local valor
+Local pesquisar := "@"
+
+
+
+
+valor := FwInputBox("Insira o seu email")
+cortado := Substr(valor, 1, At(pesquisar, valor) -1 )
+MsgInfo(cortado, "Resultado")
+Return

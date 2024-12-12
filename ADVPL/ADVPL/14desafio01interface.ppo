@@ -1,0 +1,49 @@
+#line 1 "c:/totvs/include\protheus.ch"
+#line 1 "c:/totvs/include\dialog.ch"
+#line 29 "protheus.ch"
+#line 1 "c:/totvs/include\font.ch"
+#line 30 "protheus.ch"
+#line 1 "c:/totvs/include\ptmenu.ch"
+#line 32 "protheus.ch"
+#line 1 "c:/totvs/include\print.ch"
+#line 34 "protheus.ch"
+#line 1 "c:/totvs/include\colors.ch"
+#line 36 "protheus.ch"
+#line 1 "c:/totvs/include\folder.ch"
+#line 38 "protheus.ch"
+#line 1 "c:/totvs/include\msobject.ch"
+#line 39 "protheus.ch"
+#line 1 "c:/totvs/include\vkey.ch"
+#line 43 "protheus.ch"
+#line 1 "c:/totvs/include\winapi.ch"
+#line 45 "protheus.ch"
+#line 1 "c:/totvs/include\fwcommand.ch"
+#line 48 "protheus.ch"
+#line 1 "c:/totvs/include\fwcss.ch"
+#line 51 "protheus.ch"
+#line 30 "C:\Users\CTT\AppData\Local\Temp\tds-ls.bukrclxpgj\c:/users/ctt/desktop/ana claudia/vscode/advpl/14desafio01interface.prw"
+Function U_desinter()
+    Local Nome := Space(50)
+    Local Email := Space(50)
+    Local Escola := Space(50)
+    Local oGet2
+    Local oGet1
+    Local aItems:= {"Administração","Engenharia","Ciência da Computação"}
+    Local cCombo := "Cursos"
+
+oDlg = MsDialog():New( 180, 200, 500, 700, "Desafio Interface",,,.F.,,,,,,.T.,, ,.F. )
+
+aFolder := { "Dados Pessoais", "Dados Acadêmicos" }
+     oFolder := TFolder():New( 05, 20, aFolder,,oDlg,,,, .T. ,,250,150 )
+     TSay():New( 20, 20,{||  "Dados Pessoais"},oFolder:aDialogs[1],,,.F.,.F.,.F.,.T.,,, 200, 20,.F.,.F.,.F.,.F.,.F.,.F. )
+     oGet2 := TGet():New( 40, 40, { | u | If( PCount() == 0, Nome, Nome := u ) },oFolder:aDialogs[1], 70, 010,,,,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F. ,,"Nome",,, )
+     oGet1 := TGet():New( 60, 60, { | u | If( PCount() == 0, Email, Email := u ) },oFolder:aDialogs[1], 70, 010,,,,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F. ,,"Email",,, )
+
+     TSay():New( 20, 20,{||  "Dados Acadêmicos"},oFolder:aDialogs[2],,,.F.,.F.,.F.,.T.,,, 200, 20,.F.,.F.,.F.,.F.,.F.,.F. )
+    oComboBox := TComboBox():New( 20, 20, { | u | If( PCount() == 0, cCombo, cCombo := u ) }, aItems, 100, 20, oFolder:aDialogs[2],,,,,, .T. )
+     oGet2 := TGet():New( 40, 40, { | u | If( PCount() == 0, Escola, Escola := u ) },oFolder:aDialogs[2], 70, 010,,,,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F. ,,"Escola",,, )
+    TButton():New( 140, 50, "Salvar",ODlg,{||MsgInfo(Nome, Email)}, 40,10,,, .F. , .T. , .F. ,, .F. ,,, .F.  )
+
+oDlg:Activate( oDlg:bLClicked, oDlg:bMoved, oDlg:bPainted,.T.,,,, oDlg:bRClicked, )
+
+return

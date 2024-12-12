@@ -1,0 +1,67 @@
+#line 1 "c:/totvs/include\protheus.ch"
+#line 1 "c:/totvs/include\dialog.ch"
+#line 29 "protheus.ch"
+#line 1 "c:/totvs/include\font.ch"
+#line 30 "protheus.ch"
+#line 1 "c:/totvs/include\ptmenu.ch"
+#line 32 "protheus.ch"
+#line 1 "c:/totvs/include\print.ch"
+#line 34 "protheus.ch"
+#line 1 "c:/totvs/include\colors.ch"
+#line 36 "protheus.ch"
+#line 1 "c:/totvs/include\folder.ch"
+#line 38 "protheus.ch"
+#line 1 "c:/totvs/include\msobject.ch"
+#line 39 "protheus.ch"
+#line 1 "c:/totvs/include\vkey.ch"
+#line 43 "protheus.ch"
+#line 1 "c:/totvs/include\winapi.ch"
+#line 45 "protheus.ch"
+#line 1 "c:/totvs/include\fwcommand.ch"
+#line 48 "protheus.ch"
+#line 1 "c:/totvs/include\fwcss.ch"
+#line 51 "protheus.ch"
+#line 5 "C:\Users\CTT\AppData\Local\Temp\tds-ls.lgfgngctri\c:/users/ctt/desktop/ana claudia/vscode/advpl/13desafiointerface.prw"
+Function U_Teste()
+
+
+   componentes()
+
+Return
+
+
+
+static function myMsgInfo(cMessage, ctitulo)
+
+
+oDlg = MsDialog():New( 0, 0, 100, 200, ctitulo,,,.F.,,,,,,.T.,, ,.F. )
+
+
+ TSay():New( 20, 20,{||  cMessage},oDlg,,,.F.,.F.,.F.,.T.,,, 100, 0,.F.,.F.,.F.,.F.,.F.,.F. )
+
+
+TButton():New( 40, 55, "Ok",oDlg,{||oDlg:End()}, 40,10,,, .F. , .T. , .F. ,, .F. ,,, .F.  )
+
+
+oDlg:Activate( oDlg:bLClicked, oDlg:bMoved, oDlg:bPainted,.T.,,,, oDlg:bRClicked, )
+
+return
+
+static function componentes()
+
+    Local cNome := Space(50)
+    Local cNome2 := Space(50)
+    Local oGet1
+    Local oGet2
+
+oDlg = MsDialog():New( 180, 200, 500, 700, "Interface",,,.F.,,,,,,.T.,, ,.F. )
+
+
+oGet1 := TGet():New( 40, 20, { | u | If( PCount() == 0, cNome, cNome := u ) }, oDlg, 100, 010, "@!", {|| !empty(cNome) } ,,,,,, .T. )
+ oGet2 := TGet():New( 60, 20, { | u | If( PCount() == 0, cNome2, cNome2 := u ) },oDlg, 100, 010,,{||  !empty(cNome2)},,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F. ,,"cNome2",,, )
+
+
+
+oDlg:Activate( oDlg:bLClicked, oDlg:bMoved, oDlg:bPainted,.T.,,,, oDlg:bRClicked, )
+
+return

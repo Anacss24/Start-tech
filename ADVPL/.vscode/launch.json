@@ -1,0 +1,83 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "totvs_language_debug",
+			"request": "launch",
+			"name": "TOTVS Language Debug",
+			"program": "${command:AskForProgramName}",
+			"cwb": "${workspaceFolder}",
+			"smartclientBin": "C:\\totvs\\protheus\\bin\\smartclient\\smartclient.exe",
+			"isMultiSession": true,
+			"enableTableSync": true,
+			"extendFeatures": {
+				"charDetails": false
+			},
+			"programArguments": [],
+			"enableMultiThread": false,
+			"enableProfile": false,
+			"isAccessibilityMode": false,
+			"doNotShowSplash": false,
+			"openglMode": false,
+			"dpiMode": false,
+			"olddpiMode": false,
+			"language": "",
+			"ignoreFiles": false
+		}
+	],
+	"lastPrograms": [
+		{
+			"label": "SIGAFAT"
+		},
+		{
+			"label": "u_repeticao"
+		},
+		{
+			"label": "u_whil"
+		},
+		{
+			"label": "u_character"
+		},
+		{
+			"label": "u_substrat"
+		},
+		{
+			"label": "u_desafio"
+		},
+		{
+			"label": "u_hello"
+		},
+		{
+			"label": "u_escopos"
+		},
+		{
+			"label": "u_controleacessos"
+		},
+		{
+			"label": "u_control2"
+		},
+		{
+			"label": "u_array"
+		},
+		{
+			"label": "u_frutas"
+		},
+		{
+			"label": "u_interface"
+		},
+		{
+			"label": "u_myMsgInfo"
+		},
+		{
+			"label": "u_teste"
+		},
+		{
+			"label": "u_interface01"
+		},
+		{
+			"label": "u_desinter"
+		}
+	],
+	"lastProgramExecuted": "u_desinter",
+	"lastProgramArguments": []
+}
